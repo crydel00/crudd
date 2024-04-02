@@ -1,0 +1,24 @@
+{% extends './base.html' %}
+
+{% block title %} {{post.title}} {% endblock %}
+
+{% block content %}
+
+<section class="block">
+            <div class="container">
+
+                <nav class="breadcrumb has-arrow-separator" aria-label="breadcrumbs">
+                  <ul>
+                    <li><a href="{% url 'home_page' %}">Главная</a></li>
+                    <li><a href="{% url 'news_page' %}">Все новости</a></li>
+                    <li class="is-active"><a href="#" aria-current="page">{{post.post}}</a></li>
+                  </ul>
+                </nav>
+                <h1 class="title">{{post.post}}</h1>
+                <h5>{{post.date}}</h5>
+                <img src="{{post.image}}" alt="{{post.title}}">
+                <p>{{post.desc}}</p>
+            </div>
+        </section>
+
+{% endblock %}
